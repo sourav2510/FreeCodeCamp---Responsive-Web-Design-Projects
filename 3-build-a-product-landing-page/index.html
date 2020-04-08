@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Product landing page</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <!-- bootstap 4.0.0 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!-- google font library -->
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <!-- bootstrap font library open iconic -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
+
+        <style>
+            
+            body, footer {
+                background-color: #232323;
+            }
+            #main {
+                display: flex;
+                flex-direction: column;
+                background-color: #ffffff;
+            }
+            #nav-bar, #start, #features, .secCard, #subscribe {
+                background-color: #fcfbf9;
+            }
+            #nav-bar {
+                padding: 0;
+                margin: 0;
+                width: 100vw;
+                height: 9vh;
+            }
+            #nav-bar > a {
+                margin: 0;
+            }
+            #logo {
+                cursor: default !important;
+                padding-left: 0;
+                padding-right: 0;
+                background-color: transparent;
+                opacity: .8;
+            }
+            .nav-item {
+                padding: 0 1.75vw;
+            }
+            .nav-link {
+                background-color: transparent;
+                color: black;
+                text-transform: uppercase;
+                font-family: 'Oswald', sans-serif;
+                font-size: 6.25vw;
+            }
+            .nav-link:hover {
+                color: red;
+            }
+            .navbar-collapse {
+                flex-basis: 1%;
+            }
+            .navbar-nav {
+                flex-direction: row;
+            }
+            .active, .nav-click:hover, .icon-click:hover {
+                color: red !important;
+                opacity: 0.5;
+            }
+            #header-img {
+                max-width: 10vw;
+                height: auto;
+            }
+            #home {
+                background-color: #ffffff;
+            }
+            #home {
+                height: 90vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            .container-fluid {
+                margin: 0;
+                padding: 0;
+                overflow: hidden !important;
+            }
+            .display-1, .display-4 {
+                font-family: 'Oswald', sans-serif;
+            }
+            #fatty {
+                font-size: 19vw;
+            }
+            #cole {
+                max-width: 100vw;
+                height: auto;
+            }
+            .subTextImg {
+                font-family: 'Oswald', sans-serif;
+                font-size: 10vw;
+                overflow-y: visible;
+            }
+            .subNote {
+                max-width: 45vw;
+                height: auto;
+            }
+            #scStart::before, #features::before {
+                display: block;
+                height: 10vh;
+                margin-top: -1vh;
+                visibility: hidden;
+                content: " ";
+            }
+            #start {
+                height: 82vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            .sectionTitle {
+                font-size: 13vw;
+            }
+            #wrapper {
+                overflow: hidden;
+                position: relative;
+                padding-bottom: 56.25vw;
+            }
+            #video {
+                display: block;
+                padding-left: auto;
+                padding-right: auto;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            #subTextVid {
+                font-family: 'Oswald', sans-serif;
+                font-size: 5vw;
+            }
+            #feature {
+                height: 273vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            #feature, .firstCard, .thirdCard {
+                background-color: #ffffff;
+            }
+            #recTitle {
+                min-height: 19vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+            }
+            .firstCard {
+                height: 70vh;
+            }
+            .card {
+                margin: 0 auto !important;
+                border: none;
+                border-radius: 0;
+                background-color: transparent;
+                display: block !important;
+                flex: none !important;
+            }
+            .cardImg {
+                margin: auto;
+                max-width: 50%;
+                color: black;
+                opacity: 0.6;
+                border: none;
+            }
+            .cardImg:hover {
+                opacity: 0.9;
+            }
+            .imgCard {
+                margin: auto;
+                border-radius: 0;
+            }
+            .featureOverlay {
+                margin: auto;
+                max-width: 50%;
+            }
+            .titleRec {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: 'Oswald', sans-serif;
+                font-size: 10vw;
+                color: black;
+            }
+            .cardImg:hover .titleRec {
+                color: white;
+                text-shadow: -1px -1px 0 #666, 1px -1px 0 #666, -1px 1px 0 #666, 1px 1px 0 #666;
+            }
+            .cTitle {
+                font-family: 'Oswald', sans-serif;
+                font-size: 6vw;
+            }
+            .card-body {
+                flex: 0;
+            }
+            .secCard, .thirdCard {
+                height: 91vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            #subscribe {
+                height: 72vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            #subBox {
+                max-width: 90vw;
+                margin: 0 auto;
+            }
+            #emailBox {
+                min-height: 35vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            #email {
+                flex: 0;
+            }
+            .btn:hover {
+                cursor: pointer;
+            }
+            #submit {
+                background-color: red;
+                font-family: 'Oswald', sans-serif;
+            }
+            #iconBox {
+                max-width: 65vw;
+                margin: 0 auto;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+            .iconSocial {
+                max-width: 10vw;
+            }
+            .footer {
+                height: 19vh;
+                padding: 1vh 0;
+                margin: 0;
+                line-height: 1.5;
+            }
+            .footer > .col {
+                align-self: center;
+            }
+            #leftFoot {
+                padding: 0 0 0 1vw;
+                text-align: left;
+            }
+           
+            #rightFoot {
+                padding: 0 1vw 0 0;
+                text-align: right;
+            }
+            .footer > .col > p {
+                padding: 0;
+                margin-bottom: 0;
+            }
+            .Note {
+                max-width: 30vw;
+                height: auto;
+            }
+            .oi {
+                padding-top: 0;
+            }
+            .made {
+                color: white;
+                font-family: 'Oswald', sans-serif;
+                line-height: 1;
+            }
+            footer a:hover {
+                color: white;
+                text-decoration: none;
+            }
+
+            /*// iPad -- Portrait (768 x 1024, 834 x 1112, 1024 x 1366) px */
+            /*// Wide Split Screen in iPad -- Landscape (694 x 768, 782 x 834, 981 x 1024) px */
+            @media screen and (min-aspect-ratio: 2/3) and (max-aspect-ratio: 1/1) {
+                /*#fatty {color: #99ffcc; sea foam}*/
+                .nav-link {
+                    font-size: 5vw;
+                }
+                #home {
+                    padding-top: 9vh;
+                }
+                #fatty {
+                    font-size: 15vw;
+                }
+                .subTextImg {
+                    font-size: 7vw;
+                }
+                .subNote {
+                    max-width: 29vw;
+                    margin-bottom: 1rem;
+                }
+                .sectionTitle {
+                    font-size: 10vw;
+                }
+                #subTextVid {
+                    font-size: 4vw;
+                }
+                #feature {
+                    height: 277vh;
+                    justify-content: flex-start;
+                }
+                #firstCard {
+                    height: 72vh;
+                }
+                #recTitle {
+                    margin-top: 0;
+                    height: 10vh;
+                }
+                .titleRec {
+                    font-size: 8vw;
+                }
+                .cTitle {
+                    font-size: 4vw;
+                }
+                .card-body > .card-text {
+                    font-size: 3.25vw;
+                }
+                #subBox {
+                    max-width: 50vw;
+                }
+                #emailBox, #email {
+                    font-size: 3.25vw;
+                }
+                #email {
+                    flex: 0;
+                }
+                #submit {
+                    font-size: 4vw !important;
+                }
+                #iconBox {
+                    max-width: 75vw;
+                }
+                .iconSocial {
+                    max-width: 8vw;
+                }
+                .footer {
+                    font-size: 3vw;
+                }
+                .oi {
+                    font-size: 2.5vw;
+                }
+                .Note {
+                    max-width: 25vw;
+                }
+            }
+
+            /*// iPad -- Landscape (1024 x 768, 1112 x 834, 1366 x 1024) px */
+            /*// Small, Large Desktop (1024 x 720, 2560 x 1600) px */
+            @media screen and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 33/20) {
+                /*#fatty {color:  #fb9084; salmon}*/
+                .nav-link {
+                    font-size: 3vw;
+                }
+                #header-img {
+                    max-width: 4.5vw;
+                }
+                #home {
+                    padding-top: 13vh;
+                    height: 92vh;
+                }
+                #fatty {
+                    font-size: 10vw;
+                }
+                #cole {
+                    max-width: 70vw;
+                }
+                .subTextImg {
+                    font-size: 4vw;
+                }
+                .subNote {
+                    max-width: 16vw;
+                    margin-bottom: 1.5vh;
+                }
+                #scStart::before, #features::before {
+                    height: 10vh;
+                }
+                #start {
+                    max-height: 85vh;
+                }
+                .sectionTitle {
+                    font-size: 5vw;
+                }
+                #start > div > h3, #subTitle > h3 {
+                    margin-top: 1vh;
+                }
+                #wrapper {
+                    margin-bottom: -17vw;
+                }
+                #video {
+                    margin-left: 15%;
+                    width: 70%;
+                    height: 70%;
+                }
+                #subTextVid {
+                    font-size: 3vw;
+                }
+                #feature{
+                    height: 91vh;
+                }
+                #recTitle {
+                    min-height: 13vh;
+                    margin-top: 0;
+                }
+                .firstCard, .secCard, .thirdCard {
+                    min-height: 0vh;
+                }
+                .cardImg {
+                    max-width: 90%;
+                }
+                .titleRec {
+                    font-size: 5vw;
+                }
+                .cTitle {
+                    font-size: 2.25vw;
+                }
+                .card-body > .card-text {
+                    font-size: 1.85vw;
+                }
+                .secCard {
+                    background-color: #ffffff;
+                }
+                .secCard, .thirdCard {
+                    display: block;
+                }
+                #subscribe {
+                    height: 81vh;
+                }
+                #subTitle > h3 {
+                    margin-bottom: 0;
+                }
+                #subBox {
+                    max-width: 65vw;
+                }
+                #emailBox, #email {
+                    font-size: 2.5vw;
+                }
+                #email-label, #email, #subBtn {
+                    flex: 0;
+                }
+                #submit {
+                    font-size: 3vw !important;
+                }
+                #subscribe > .col-xl {
+                    flex: 0;
+                }
+                #iconBox {
+                    max-width: 45vw;
+                }
+                .iconSocial {
+                    max-width: 5vw;
+                }
+                .footer {
+                    height: 10vh;
+                }
+                .footer > .col > p {
+                    font-size: 2vw;
+                }
+                .oi {
+                    font-size: 2vw;
+                }
+                .Note {
+                    max-width: 17vw;
+                }
+            }
+
+            /*// iPhone SE, iPhone 8, iPhone 8 Plus -- Landscape (568 x 320, 667 x 375, 736 x 414) px */
+            /*// Laptop & Desktop -- height restrict (height 678px & below) */
+            @media screen and (min-aspect-ratio: 33/20) {
+                /*#fatty {color: #9999ff; purple}*/
+                #nav-bar {
+                    height: 13vh;
+                }
+                .nav-link {
+                    font-size: 4vw;
+                }
+                #header-img {
+                    max-width: 4vw;
+                }
+                #home {
+                    padding-top: 13vh;
+                }
+                #fatty {
+                    font-size: 6vw;
+                }
+                #fatty, .subTextImg {
+                    overflow: visible !important;
+                }
+                #cole {
+                    max-width: 60vw;
+                }
+                .subTextImg {
+                    font-size: 5vw;
+                }
+                .subNote {
+                    max-width: 20vw;
+                    margin-bottom: 2.5vh;
+                }
+                #scStart::before, #features::before {
+                    height: 13vh;
+                }
+                #start {
+                    height: 87vh;
+                }
+                .sectionTitle {
+                    font-size: 6vw;
+                }
+                #wrapper {
+                    margin-bottom: -23vw;
+                }
+                #video {
+                    margin-left: 20%;
+                    width: 60%;
+                    height: 60%;
+                }
+                #subTextVid {
+                    font-size: 4vw;
+                }
+                #feature {
+                    height: auto;
+                }
+                #recTitle > h3, #subTitle > h3 {
+                    margin-top: 1vh;
+                }
+                #recTitle {
+                    min-height: 11vh;
+                }
+                .firstCard {
+                    height: auto;
+                }
+                .cardImg {
+                    max-width: 30%;
+                }
+                .titleRec {
+                    font-size: 7vw;
+                }
+                .cTitle {
+                    font-size: 3vw;
+                }
+                .secCard, .thirdCard {
+                    height: 110vh;
+                }
+                #subscribe {
+                    height: 75vh;
+                }
+                #subTitle > h3 {
+                    margin-bottom: 0;
+                }
+                #subBox {
+                    max-width: 65vw;
+                }
+                #email {
+                    flex: 0;
+                }
+                #iconBox {
+                    max-width: 45vw;
+                }
+                .iconSocial {
+                    max-width: 6vw;
+                }
+                .footer {
+                    height: 12vh;
+                    font-size: 2vw;
+                }
+                .Note {
+                    max-width: 17vw;
+                }
+                /*// Medium Desktop -- (1920 x 1080) px */
+                @media screen and (min-width: 1200px) {
+                    /*#fatty {color: #ff99bb; pink}*/
+                    #nav-bar {
+                        height: 10vh;
+                    }
+                    .nav-link, .nav-click {
+                        font-size: 3vw;
+                    }
+                    #header-img {
+                        max-width: 4vw;
+                    }
+                    #home {
+                        max-height: 100vh;
+                    }
+                    #cole {
+                        max-width: 55vw;
+                    }
+                    .subTextImg {
+                        font-size: 3.5vw;
+                    }
+                    .subNote {
+                        max-width: 14vw;
+                        margin-bottom: 2vh;
+                    }
+                    #scStart::before, #features::before {
+                        height: 10vh;
+                    }
+                    #start {
+                        max-height: 90vh;
+                    }
+                    .sectionTitle {
+                        font-size: 3.5vw;
+                    }
+                    #wrapper {
+                        margin-bottom: -27vw;
+                    }
+                    #video {
+                        margin-left: 25%;
+                        width: 50%;
+                        height: 50%;
+                    }
+                    #subTextVid {
+                        font-size: 2.5vw;
+                    }
+                    #feature {
+                        height: 91vh;
+                    }
+                    #recTitle > h3, #subTitle > h3 {
+                        margin-top: 1vh;
+                    }
+                    #recTitle {
+                        height: auto;
+                    }
+                    .firstCard, .secCard, .thirdCard {
+                        min-height: 0vh;
+                    }
+                    .cardImg {
+                        max-width: 55%;
+                    }
+                    .titleRec {
+                        font-size: 4vw;
+                    }
+                    .cTitle {
+                        font-size: 2vw;
+                    }
+                    .card-body > .card-text {
+                        font-size: 1.5vw;
+                    }
+                    .secCard {
+                        background-color: #ffffff;
+                    }
+                    .secCard, .thirdCard {
+                        display: block;
+                    }
+                    #subscribe {
+                        height: 80vh;
+                    }
+                    #subBox {
+                        max-width: 65vw;
+                    }
+                    #emailBox, #email {
+                        font-size: 2vw;
+                    }
+                    #email-label, #email, #subBtn {
+                        flex: 0;
+                    }
+                    #submit {
+                        font-size: 2vw !important;
+                    }
+                    #subscribe > .col-xl {
+                        flex: 0;
+                    }
+                    .iconSocial {
+                        max-width: 4vw;
+                    }
+                    .footer {
+                        height: 10vh;
+                        font-size: 1.75vw;
+                    }
+                    .oi {
+                        font-size: 1.5vw;
+                    }
+                    .Note {
+                        max-width: 17vw;
+                    }
+                }
+            }
+
+        </style>
+
+    </head>
+    <body>
+        <div class="text-center" id="main">
+            <header id="header">
+                <nav class="navbar navbar-expand-lg fixed-top" id="nav-bar">
+                    <a class="navbar-brand">
+                        <button disabled type="button" class="btn" id="logo">
+                            <img alt="snake" id="header-img" src="" onerror="this.onerror=null;this.src='https://miro.medium.com/max/1024/1*urOEB0cdoJFbfH1EyZYs-g.png'">
+                        </button>
+                    </a>
+                    <ul class="nav navbar-nav collapse navbar-collapse">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#scStart">FirstLook</a>
+                        </li>                    
+                        <li class="nav-item">
+                            <a class="nav-link" href="#features">Features</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#subscribe">Subscribe</a>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container-fluid" id="home">
+                <div class="container-fluid navPad"></div>
+                <div class="container-fluid text-center">
+                    <h2 class="display text-center" id="fatty">MI Note 9 Pro Max</h2>
+                </div>
+                <div class="container-fluid">
+                    <img id="cole" src="" onerror="this.onerror=null;this.src='https://trak.in/wp-content/uploads/2020/03/ES5LMNVUwAASb8V.jpeg'" alt="Snake Diet founder Cole Robinson">
+                </div>
+                <div class="container-fluid text-center subTextImg">
+                    64MP AI Quad Camera
+                </div>
+            </div>
+            <div id="scStart">
+                <div class="container-fluid" id="start">
+                    <div class="container-fluid navPad"></div>
+                    <div class="container-fluid">
+                        <h3 class="sectionTitle display-4 font-weight-light">Check out the video</h3>
+                    </div>
+                    <div class="container-fluid" id="wrapper">
+                        <iframe id="video" src="https://www.youtube.com/embed/CR3YYNc5ZzQ?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
+                    <div class="container-fluid">
+                        <p class="text-center" id="subTextVid">
+                            MI Note 9 pro max</p>
+                    </div>
+                    <div class="container-fluid navPad"></div>
+                </div>
+            </div>
+            <div id="features">
+                <div class="container-fluid" id="Feature">
+                    <div class="container-fluid" id="recTitle">
+                        <div class="container-fluid navPad"></div>
+                        <h3 class="sectionTitle display-4"><u>Features</u></h3>
+                    </div><br><hr>
+                    <div class="container-fluid cards">
+                        <div class="card-deck row">
+                            <div class="col-lg firstCard">
+                                <div class="card">
+                                    <div class="card cardImg">
+                                        <a href="https://www.youtube.com/watch?v=jQZmEn4tIM0" target="_blank">
+                                            <img class="card-img-top imgCard" src="" onerror="this.onerror=null;this.src='https://www.soyacincau.com/wp-content/uploads/2020/03/200312-redmi-note-9-pro-05.jpg'" alt="Card image">
+                                            <div class="card-img-overlay featureOverlay">
+                                                <h5 class="card-title titleRec">Camera</h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body text-muted">
+                                    <h5 class="card-title cTitle">Front Camera</h5>
+                                    <p class="card-text font-weight-light">32MP In-Display Front Camera</p>
+                                    <p class="card-text font-weight-light">Front camera video Beautify | Short videos (speed adjustment beauty filters and popular music) | 120fps slo-mo video recording | Kaleidoscope</p>
+                                    <h5 class="card-text cTitle font-weight-bold">Rear Camera</h5>
+                                    <p class="card-text font-weight-light">64MP AI Quad Camera</p>
+                                    <p class="card-text font-weight-light">Short video editing | ultra-wide angle video recording | macro video recording | 960 fps slow motion video | Rear camera video Beautify | Time-lapse photography | Pro video mode | Movie frame | Super stabilization</p>
+                                </div>
+                            </div>
+                            <div class="col-lg secCard">
+                                <div class="card">
+                                    <div class="card cardImg">
+                                        <a href="https://www.youtube.com/watch?v=CR3YYNc5ZzQ" target="_blank">
+                                            <img class="card-img-top imgCard" src="" onerror="this.onerror=null;this.src='https://blog.mi.com/en/wp-content/uploads/2020/03/Redmi-Note-9-Pro.png'" alt="Card image">
+                                            <div class="card-img-overlay featureOverlay">
+                                                <h5 class="card-title titleRec">ADVANCED FEATURES</h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body text-muted">
+                                    <h5 class="card-title cTitle">Processor</h5>
+                                    <p class="card-text font-weight-light">Qualcomm® Snapdragon™ 720G</p>
+                                    <h6 class="card-text cTitle font-weight-bold">Storage and RAM</h6>
+                                    <p class="card-text font-weight-light">8GB + 128GB, largest available for Redmi Note 9 Pro Max</p>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-lg thirdCard">
+                                <div class="card">
+                                    <div class="card cardImg">
+                                        <a href="https://www.youtube.com/watch?v=CR3YYNc5ZzQ" target="_blank">
+                                            <img class="card-img-top imgCard" src="" onerror="this.onerror=null;this.src='https://i01.appmifile.com/webfile/globalimg/in/cms/82E02A4B-C7C8-FD69-A2C7-8E135C1CE017.jpg'" alt="Card image">
+                                            <div class="card-img-overlay featureOverlay">
+                                                <h5 class="card-title titleRec">DISPLAY AND BATTERY</h5>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-body text-muted">
+                                    <h5 class="card-title cTitle">Display</h5>
+                                    <p class="card-text font-weight-light">16.9cm (6.67) FHD+ resolution DotDisplay</p>
+                                    <p class="card-text font-weight-light">Resolution: 2400 x 1080 FHD+ ; Brightness: 450nit (typ) ; Corning® Gorilla® Glass 5</p>
+                                    <h6 class="card-text cTitle font-weight-bold">Battery</h6>
+                                    <p class="card-text font-weight-light">5020mAh Li-Polymer Battery, USB Type-C reversible connector port, Includes 33W Fast Charger in-box</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><hr>
+            </div>
+            <div class="container-fluid" id="subscribe">
+                <div class="container-fluid" id="subTitle">
+                    <h3 class="sectionTitle display-4">NEWS AND UPDATES</h3>
+                </div>
+                <div class="container-fluid" id="subBox">
+                    <form id="form" action="https://www.freecodecamp.com/email-submit" method="post">
+                        <div class="container-fluid form-group text-center" id="emailBox">
+                            <label for="email" class="col-lg col-form-label" id="email-label">Subscribe to our mailing list for more MI Devices News and Updates!</label>
+                            <input type="email" class="form-control col-sm" id="email" name="email" placeholder="email@domain.com" required>
+                            <div class="container-fluid" id="subBtn">
+                                <input type="submit" class="btn btn-lg text-light" id="submit" value="SUBSCRIBE">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-xl">
+                    <div class="container-fluid text-center" id="iconBox">
+                        <a class="icon-click" href="https://www.youtube.com/watch?v=ixajHBaPXUk" target="_blank"><img class="iconSocial" src="icons/iconmonstr-youtube-6-240.png" onerror="this.onerror=null;this.src='https://farm2.staticflickr.com/1724/40970890380_03497116f5_o.png'" alt="image"></a>
+                        <a class="icon-click" href="" target="_blank"><img class="iconSocial" src="icons/iconmonstr-instagram-6-240.png" onerror="this.onerror=null;this.src='https://farm2.staticflickr.com/1739/27913406547_5e5ed9a376_o.png'" alt="image"></a>
+                        <a class="icon-click" href="" target="_blank"><img class="iconSocial" src="icons/iconmonstr-facebook-6-240.png" onerror="this.onerror=null;this.src='https://farm1.staticflickr.com/879/42064814964_52f9efd8a2_o.png'" alt="image"></a>
+                        <a class="icon-click" href="" target="_blank"><img alt="image" class="iconSocial" src="icons/iconmonstr-twitter-1-240.png" onerror="this.onerror=null;this.src='https://farm2.staticflickr.com/1735/27913406467_3cfdd144eb_o.png'"></a>
+                    </div>
+                </div>
+                <div class="container-fluid navPad"></div>
+            </div>
+            <footer class="footer row text-light font-weight-light text-center">
+
+
+                <div class="col" id="leftFoot">
+                    <a href="https://www.mi.com/in/" target="_blank"><img height="100" width="100" class="Note" src="https://miro.medium.com/max/1024/1*urOEB0cdoJFbfH1EyZYs-g.png" alt="image"></a>
+                </div>
+                
+                <div class="col" id="rightFoot">
+                    <p>Coded with<span class="oi oi-heart btn-sm" aria-hidden="true"></span>by <a class="made" href="https://www.freecodecamp.org/sourav2510" target="_blank">Sourav Agarwal</a></p>
+                </div>
+            </footer>
+        </div>
+    </body>
+</html>

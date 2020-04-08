@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- google font library -->
+    <link href="https://fonts.googleapis.com/css?family=Fira+Code" rel="stylesheet">
+    <!-- bootstrap font library open iconic -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
+    
+    <style>
+
+        body, footer {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Garamond', 'Georgia', serif;
+            font-size: 1.05rem;
+            line-height: 1.4rem;
+            font-weight: 100;
+            color: #3e4349;
+            background-color: #e0eaeb;
+        }
+        .contain {
+            background-color: #fff;
+            padding-left: 5%;
+            padding-right: 5%;
+        }
+        .imgCtn{
+            text-align: right;
+        }
+        #header-img {
+            max-width: 35vw;
+            height: auto;
+            padding-top: 3%;
+            padding-right: 3%;
+        }
+        .nav {
+            margin-top: -15%;
+            padding-left: 0;
+            padding-bottom: 3%;
+            padding-left: 5%;
+            border-bottom: 1px dotted #ccc;
+        }
+
+        #navbar ul header {
+            margin-left: -5%;
+        }
+        #navbar li {
+            display: list-item;
+            list-style-type: disc;
+        }
+        .nav-link {
+            color: #004b6b;
+            text-decoration-style: dotted;
+        }
+        span {
+            font-size: 1.5rem;
+        }
+        .nav-link:hover {
+            color: #6d4100;
+            text-decoration-style: solid;
+        }
+        .nav-item:hover > .headLink, h1:hover > .headLink {
+            visibility: visible;
+        }
+        .headLink {
+            text-decoration: none;
+            color: #ddd;
+            margin: 0 0.1em;
+            padding: 0 0.1em;
+            visibility: hidden;
+        }
+        .headLink:hover {
+            color: #444;
+        }
+        #mainHead {
+            font-size: 2.7rem;
+            line-height: 1rem;
+        }
+        #Quickstart > p {
+            padding: 0 4% 4% 0;
+        }
+        p {
+            padding: 0 4% 0 0;
+            -ms-word-break: break-word;
+            word-break: break-word;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
+        }
+        h1 {
+            font-size: 1.95rem;
+            line-height: 1.95rem;
+            font-weight: normal;
+            color: black;
+        }
+        ol {
+            padding-left: 13%;
+            padding-right: 1%;
+            -ms-word-break: break-word;
+            word-break: break-word;
+            -webkit-hyphens: auto;
+            -moz-hyphens: auto;
+            hyphens: auto;
+        }
+        h2 {
+            font-size: 1.5rem;
+        }
+        .small {
+            font-size: 1.75rem;
+        }
+        .codeBox {
+            margin: 0 -3%;
+            padding: 1.5% 3%;
+        }
+        .codeBox, .codeBox code {
+            background-color: #f8f8f8;
+            line-height: 1.3rem;
+            white-space: nowrap;
+            overflow: auto;
+            overflow-y: hidden;
+        }
+        code {
+            font-family: 'Fira Code', monospace;
+            font-size: .95rem;
+            font-weight: 600;
+            background-color: #e8eff0;
+            -ms-word-break: normal;
+            word-break: normal;
+            -webkit-hyphens: none;
+            -moz-hyphens: none;
+            hyphens: none;
+        }
+        .blue {
+            color: #004461;
+            font-weight: 900;
+            display: inline;
+        }
+        .grey {
+            color: #888888;
+            display: inline;
+        }
+        .green {
+            color: #4e9a06;
+            display: inline;
+        }
+        .blueLink {
+            color: #004b6b;
+            text-decoration-style: dotted;
+        }
+        .blueLink:hover {
+            color: #6d4100;
+            text-decoration-style: solid;
+        }
+        .blackLink {
+            font-family: 'Fira Code', monospace;
+            color: black;
+            font-weight: 900;
+            text-decoration-style: dotted;
+            text-decoration-color: #004b6b;
+        }
+        .blackLink:hover {
+            color: black;
+            font-weight: 900;
+            text-decoration-style: solid;
+            text-decoration-color: #6d4100;
+        }
+        .codeCtn {
+            background-color: #fafafa;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+            padding: 0 2% 3%;
+        }
+        .codeCtn h2 {
+            font-weight: lighter;
+            margin-top: 5%;
+        }
+        .codeInside {
+            overflow: hidden;
+        }
+        #Debug_Mode {
+            padding-bottom: 5%;
+        }
+        #debugSc img {
+            border: 0;
+            box-shadow: 2px 2px 4px #eee;
+            max-width: 100%;
+        }
+        footer {
+            text-align: center;
+        }
+        #footer-img {
+            max-width: 40vw;
+            height: auto;
+        }
+        .oi {
+            padding-top: 0;
+        }
+        .oi-heart {
+            font-size: 1rem;
+            padding-left: 2%;
+            padding-right: 2%;
+        }
+
+
+        @media screen and (min-aspect-ratio: 2/3) and (max-aspect-ratio: 1/1) {
+            /*#Quickstart h1 {color: #99ffcc; sea foam}*/
+            .contain {
+                background-color: #fff;
+                padding-left: 2%;
+                padding-right: 0;
+            }
+            #Quickstart > p {
+                padding: 0;
+            }
+            p {
+                padding: 0 1%;
+            }
+            .codeBox {
+                margin: 0 2% 0 0;
+                padding: 1%;
+            }
+            ol {
+                padding-left: 5%;
+                padding-right: 2%;
+            }
+            .codeCtn {
+                padding: 0 2% 1%;
+            }
+            .codeCtn h2 {
+                margin-top: 2%;
+            }
+            .lower > p {
+                padding-right: 3.5%;
+            }
+            .row {
+                padding: 1% 1% 5.5%;
+            }
+            #leftFoot, #midFoot {
+                float: left;
+                text-align: left;
+            }
+            #leftFoot, #rightFoot {
+                width: 38%;
+            }
+            #midFoot {
+                width: 10%;
+            }
+            #rightFoot {
+                float: right;
+                text-align: right;
+            }
+            #footer-img {
+                max-width: 20vw;
+                height: auto;
+                margin-top: 5%;
+            }
+            .oi {
+                padding-top: 0;
+            }
+            .oi-heart {
+                font-size: 1rem;
+                padding-left: 2%;
+                padding-right: 2%;
+            }
+        }
+
+        /*// iPad -- Landscape (1024 x 768, 1112 x 834, 1366 x 1024) px */
+        /*// Small Desktop (1024 x 720) px */ 
+        @media screen and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 3/2) {
+            /*#Quickstart h1 {color:  #fb9084; salmon}*/
+            .contain {
+                padding: 1% 2% 0 5%;
+            }
+            .imgCtn{
+                text-align: left;
+            }
+            #header-img {
+                width: 20%;
+                height: auto;
+                padding-top: 0;
+                padding-right: 0;
+                position: fixed;
+            }
+            .nav {
+                margin-top: 10%;
+                padding: 0;
+                border-bottom: none;
+                width: 22%;
+                height: 100%;
+                position: fixed;
+            }
+            #navbar li {
+                padding-left: 5%;
+                padding-bottom: 2%;
+            }
+            .nav-link {
+                color: #004b6b;
+                text-decoration-style: dotted;
+            }
+            span {
+                font-size: 1.5rem;
+            }
+            .nav-link:hover {
+                color: #6d4100;
+                text-decoration-style: solid;
+            }
+            .nav-item:hover > .headLink, h1:hover > .headLink {
+                visibility: visible;
+            }
+            main {
+                padding-left: 25%;
+            }
+            #mainHead {
+                font-size: 2.5rem;
+                margin-top: 2%;
+            }
+            #Quickstart > p {
+                padding: 0 4% 0% 0;
+            }
+            p {
+                padding: 0 3% 0 0;
+                font-size: 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                line-height: 1.8rem;
+            }
+            ol {
+                padding: 0 0 0 4%;
+            }
+            .small {
+                font-size: 1.5rem;
+            }
+            .codeBox {
+                padding: 1.5% 2%;
+                margin: 0;
+            }
+            .codeCtn {
+                padding: 0 2% 1%;
+                margin-right: -.5%;
+            }
+            .codeCtn h2 {
+                margin-top: 2%;
+            }
+            .codeInside {
+                margin: 0 -2%;
+            }
+            #debugSc {
+                padding: 0 10% 0;
+            }
+            .row {
+                width: 100%;
+                display: inline-flex;
+                height: 15vh;
+            }
+            footer > .col {
+                max-width: 100%;
+                align-self: center;
+            }
+            #leftFoot {
+                text-align: left;
+                padding-left: 2%;
+            }
+            #leftFoot, #rightFoot {
+                flex-grow: 1;
+            }
+            #midFoot {
+                flex-grow: 3;
+            }
+            #footer-img {
+                max-width: 10vw;
+                height: auto;
+            }
+            #rightFoot {
+                text-align: right;
+            }
+        }
+
+        @media screen and (min-aspect-ratio: 3/2) {
+            /*#Quickstart h1 {color: #9999ff; purple}*/
+            .contain {
+                padding: 1% 2% 0 5%;
+            }
+            .imgCtn{
+                text-align: left;
+            }
+            #header-img {
+                width: 20%;
+                height: auto;
+                padding-top: 0;
+                padding-right: 0;
+                position: fixed;
+            }
+            .nav {
+                margin-top: 10%;
+                padding: 0;
+                border-bottom: none;
+                width: 22%;
+                height: 100%;
+                position: fixed;
+            }
+            #navbar li {
+                padding-left: 5%;
+                padding-bottom: 2%;
+            }
+            .nav-link {
+                color: #004b6b;
+                text-decoration-style: dotted;
+            }
+            span {
+                font-size: 1.5rem;
+            }
+            .nav-link:hover {
+                color: #6d4100;
+                text-decoration-style: solid;
+            }
+            .nav-item:hover > .headLink, h1:hover > .headLink {
+                visibility: visible;
+            }
+            main {
+                padding-left: 25%;
+            }
+            #mainHead {
+                font-size: 2.5rem;
+                margin-top: 2%;
+            }
+            #Quickstart > p {
+                padding: 0 4% 0% 0;
+            }
+            p {
+                padding: 0 3% 0 0;
+                font-size: 1rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+                line-height: 1.8rem;
+            }
+            ol {
+                padding: 0 0 0 4%;
+            }
+            .small {
+                font-size: 1.5rem;
+            }
+            .codeBox {
+                padding: 1.5% 2%;
+                margin: 0;
+            }
+            .codeCtn {
+                padding: 0 2% 1%;
+                margin-right: -.5%;
+            }
+            .codeCtn h2 {
+                margin-top: 2%;
+            }
+            .codeInside {
+                margin: 0 -2%;
+            }
+            #debugSc {
+                padding: 0 5% 0 4%;
+            }
+            .row {
+                width: 100%;
+                display: inline-flex;
+                height: 15vh;
+            }
+            footer > .col {
+                max-width: 100%;
+                align-self: center;
+                padding-top: 5%;
+            }
+            #leftFoot {
+                text-align: left;
+                padding-left: 2%;
+            }
+            #leftFoot, #rightFoot {
+                flex-grow: 1;
+            }
+            #midFoot {
+                flex-grow: 3;
+            }
+            #footer-img {
+                max-width: 10vw;
+                height: auto;
+            }
+            #rightFoot {
+                text-align: right;
+            }
+            /*// Medium Desktop -- (1920 x 1080) px */
+            @media screen and (min-width: 1200px) {
+                /*#Quickstart h1 {color: #ff99bb; pink}*/
+                .contain {
+                    padding: 1% 19% 0;
+                }
+                #header-img {
+                    width: 15%;
+                }
+                .nav {
+                    padding: 0 0 0 2%;
+                    width: 13%;
+                }
+                main {
+                    padding-left: 25.5%;
+                }
+                p {
+                    font-size: 1.05rem;
+                }
+                #debugSc {
+                    padding: 0 10%;
+                }
+                .row {
+                    width: 70%;
+                    height: 10vh;
+                    padding: 0 15% 2%;
+                }
+                #footer-img {
+                    max-width: 6vw;
+                }
+            }
+            /*// Large Desktop (2560 x 1600) px*/
+            @media screen and (min-width: 2000px) {
+                /*#Quickstart h1 {color: #ffd11a; gold}*/
+                .contain {
+                    padding: 1% 27% 0 26%;
+                }
+                #header-img {
+                    width: 10.5%;
+                }
+                .nav {
+                    margin-top: 6%;
+                    width: 8%;
+                }
+                main {
+                    padding-left: 25%;
+                }
+                p {
+                    font-size: 1.08rem;
+                }
+                .row {
+                    width: 50%;
+                    height: 6vh;
+                    padding: 0 25% 2%;
+                }
+                #footer-img {
+                    max-width: 5vw;
+                }
+
+            }
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div class="contain">
+        <nav id="navbar">
+            <div class="imgCtn">
+                <a href="https://flask.palletsprojects.com/en/1.1.x/">
+                    <img id="header-img" src="images/flask-logo.png" onerror="this.onerror=null;this.src='https://live.staticflickr.com/65535/49243492216_41c8172f99_o.png'" alt="flask logo">
+                </a>
+            </div>
+            <ul class="nav">
+                <header>Quickstart Docs »</header>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#Quickstart">Quickstart</a><span class="headLink">¶</span>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#A_Minimal_Application">A Minimal Application</a><span class="headLink">¶</span>
+                    </li>                    
+                    <li class="nav-item">
+                            <a class="nav-link" href="#What_to_do_if_the_Server_does_not_Start">What to do if the Server does not Start</a><span class="headLink">¶</span>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#Old_Version_of_Flask">Old Version of Flask</a><span class="headLink">¶</span>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#Invalid_Import_Name">Invalid Import Name</a><span class="headLink">¶</span>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#Debug_Mode">Debug Mode</a><span class="headLink">¶</span>
+                    </li>
+            </ul>
+        </nav>
+        <main id="main-doc">
+            <section class="main-section" id="Quickstart">
+                <header><h1 id="mainHead">Quickstart<a class="headLink" href="#Quickstart" title="Permalink to this headline">¶</a></h1></header>
+                    <p>Eager to get started? This page gives a good introduction to Flask. It assumes you already have Flask installed. If you do not, head over to the <a class="blueLink" href="https://flask.palletsprojects.com/en/1.1.x/installation/#installation">Installation</a> section.</p>
+            </section>
+            <section class="main-section" id="A_Minimal_Application">
+                <header><h1>A Minimal Application<a class="headLink" href="#A_Minimal_Application" title="Permalink to this headline">¶</a></h1></header>
+                <article>
+                    <p>A minimal Flask application looks something like this:</p>
+                    <div class="codeBox">
+                        <code>
+                            <p class="blue">from</p> flask <p class="blue">import</p> Flask<br>
+                            app = Flask(__name__)<br>
+                            <br>
+                            <p class="grey">@app</p>.route(<p class="green">'/'</p>)<br>
+                            <p class="blue">def</p> hello_world():<br>
+                                <p class="blue">return</p> <p class="green">'Hello, World!'</p>
+                        </code>
+                    </div>
+                    <p>So what did that code do?</p>
+                    <ol>
+                        <li>
+                            First we imported the <a class="blackLink" href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask">Flask</a> class. An instance of this class will be our WSGI application.
+                        </li>
+                        <li>
+                            Next we create an instance of this class. The first argument is the name of the application’s module or package. If you are using a single module (as in this example), you should use <code>__name__</code> because depending on if it’s started as application or imported as module the name will be different (<code>'__main__'</code> versus the actual import name). This is needed so that Flask knows where to look for templates, static files, and so on. For more information have a look at the <a class="blackLink" href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask">Flask</a> documentation.
+                        </li>
+                        <li>
+                            We then use the <a class="blackLink" href="https://flask.palletsprojects.com/en/1.1.x/api/#flask.Flask.route">route()</a> decorator to tell Flask what URL should trigger our function.
+                        </li>
+                        <li>
+                            The function is given a name which is also used to generate URLs for that particular function, and returns the message we want to display in the user’s browser.
+                        </li>
+                    </ol>
+                    <p>
+                        Just save it as <code>hello.py</code> or something similar. Make sure to not call your application <code>flask.py</code> because this would conflict with Flask itself.
+                    </p>
+                    <p>
+                        To run the application you can either use the <strong>flask</strong> command or python’s <code>-m</code> switch with Flask. Before you can do that you need to tell your terminal the application to work with by exporting the <code>FLASK_APP</code> environment variable:
+                    </p>
+                    <div class="codeBox">
+                        <code>
+                            $ export FLASK_APP=hello.py<br>
+                            $ flask run<br>
+                             * Running on http://127.0.0.1:5000/
+                         </code>
+                     </div>
+                     <p>
+                        If you are on Windows, the environment variable syntax depends on command line interpreter. On Command Prompt:
+                    </p>
+                    <div class="codeBox">
+                        <code>C:\path\to\app><p class="blue">set</p> FLASK_APP=hello.py</code>
+                    </div>
+                    <p>And on PowerShell:</p>
+                    <div class="codeBox">
+                        <code>PS C:\path\to\app> $env:FLASK_APP = "hello.py"</code>
+                    </div>
+                    <p>Alternatively you can use <strong>python -m</strong> flask:</p>
+                    <div class="codeBox">
+                        <code>
+                            $ export FLASK_APP=hello.py<br>
+                            $ python -m flask run<br>
+                             * Running on http://127.0.0.1:5000/
+                        </code>
+                    </div>
+                    <p>
+                        This launches a very simple builtin server, which is good enough for testing but probably not what you want to use in production. For deployment options see <a class="blueLink" href="https://flask.palletsprojects.com/en/1.1.x/deploying/#deployment">Deployment Options</a>.
+                    </p>
+                    <p>Now head over to <a class="blueLink" href="http://127.0.0.1:5000/">http://127.0.0.1:5000/</a>, and you should see your hello world greeting.</p>
+                </article>
+                <div class="codeCtn">
+                    <article>
+                        <h2>Externally Visible Server:</h2>
+                        <p>
+                            If you run the server you will notice that the server is only accessible from your own computer, not from any other in the network. This is the default because in debugging mode a user of the application can execute arbitrary Python code on your computer.
+                        </p>
+                        <p>
+                            If you have the debugger disabled or trust the users on your network, you can make the server publicly available simply by adding <code>--host=0.0.0.0</code> to the command line:
+                        </p>
+                        <div class="codeBox codeInside">
+                            <code>$ flask run --host=0.0.0.0</code>
+                        </div>
+                        <p>This tells your operating system to listen on all public IPs.</p>
+                    </article>
+                </div>
+            </section>
+            <section class="main-section" id="What_to_do_if_the_Server_does_not_Start">
+                <header><h1>What to do if the Server does not Start<a class="headLink" href="#What_to_do_if_the_Server_does_not_Start" title="Permalink to this headline">¶</a></h1></header>
+                    <article class="lower">
+                        <p>
+                            In case the <strong>python -m flask</strong> fails or <strong>flask</strong> does not exist, there are multiple reasons this might be the case. First of all you need to look at the error message.
+                        </p>
+                    </article>
+            </section>
+            <section class="main-section" id="Old_Version_of_Flask">
+                <header><h1 class="small">Old Version of Flask<a class="headLink" href="#Old_Version_of_Flask" title="Permalink to this headline">¶</a></h1></header>
+                    <article class="lower">
+                        <p>
+                            Versions of Flask older than 0.11 use to have different ways to start the application. In short, the <strong>flask</strong> command did not exist, and neither did <strong>python -m flask</strong>. In that case you have two options: either upgrade to newer Flask versions or have a look at the <a class="blueLink" href="https://flask.palletsprojects.com/en/1.1.x/server/#server">Development Server</a> docs to see the alternative method for running a server.
+                        </p>
+                    </article>
+            </section>
+            <section class="main-section" id="Invalid_Import_Name">
+                <header><h1 class="small">Invalid Import Name<a class="headLink" href="#Invalid_Import_Name" title="Permalink to this headline">¶</a></h1></header>
+                    <article class="lower">
+                        <p>
+                            The <code>FLASK_APP</code> environment variable is the name of the module to import at <strong>flask run</strong>. In case that module is incorrectly named you will get an import error upon start (or if debug is enabled when you navigate to the application). It will tell you what it tried to import and why it failed.
+                        </p>
+                        <p>
+                            The most common reason is a typo or because you did not actually create an <code>app</code> object.
+                        </p>
+                    </article>
+            </section>
+            <section class="main-section" id="Debug_Mode">
+                <header><h1>Debug Mode<a class="headLink" href="#Debug_Mode" title="Permalink to this headline">¶</a></h1></header>
+                    <article class="lower">
+                        <p>
+                            (Want to just log errors and stack traces? See <a class="blueLink" href="https://flask.palletsprojects.com/en/1.1.x/errorhandling/#application-errors">Application Errors</a>)
+                        </p>
+                        <p>
+                            The <strong>flask</strong> script is nice to start a local development server, but you would have to restart it manually after each change to your code. That is not very nice and Flask can do better. If you enable debug support the server will reload itself on code changes, and it will also provide you with a helpful debugger if things go wrong.
+                        </p>
+                        <p>
+                            To enable all development features (including debug mode) you can export the <code>FLASK_ENV</code> environment variable and set it to <code>development</code> before running the server:
+                        </p>
+                        <div class="codeBox">
+                            <code>
+                                $ export FLASK_ENV=development<br>
+                                $ flask run
+                            </code>
+                        </div>
+                        <p>(On Windows you need to use <code>set</code> instead of <code>export</code>.)</p>
+                        <p>This does the following things:</p>
+                        <ol>
+                            <li>it activates the debugger</li>
+                            <li>it activates the automatic reloader</li>
+                            <li>it enables the debug mode on the Flask application.</li>
+                        </ol>
+                        <p>
+                            You can also control debug mode separately from the environment by exporting <code>FLASK_DEBUG=1</code>.
+                        </p>
+                        <p>
+                            There are more parameters that are explained in the <a class="blueLink" href="https://flask.palletsprojects.com/en/1.1.x/server/#server">Development Server</a> docs.
+                        </p>
+                    </article>
+                    <div class="codeCtn">
+                        <article>
+                            <h2>Attention:</h2>
+                            <p>
+                                Even though the interactive debugger does not work in forking environments (which makes it nearly impossible to use on production servers), it still allows the execution of arbitrary code. This makes it a major security risk and therefore it <strong>must never be used on production machines</strong>.
+                            </p>
+                    </div>
+                            <p>Screenshot of the debugger in action:</p>
+                            <div id="debugSc">
+                                <img src="images/debugger.png" onerror="this.onerror=null;this.src='https://live.staticflickr.com/65535/49242862508_bd1623a2e9_o.png'" alt="screenshot of debugger in action">
+                            </div>
+                            <p>
+                                More information on using the debugger can be found in the <a class="blueLink" href="https://werkzeug.palletsprojects.com/debug/#using-the-debugger">Werkzeug documentation</a>.
+                            </p>
+                            <p>Have another debugger in mind? See <a class="blueLink" href="https://flask.palletsprojects.com/en/1.1.x/errorhandling/#working-with-debuggers">Working with Debuggers</a>.</p>
+                        </article>
+            </section>
+    
+        </main>
+    </div>
+        <footer class="footer row text-light font-weight-light text-center">
+            <!-- <div class="row"> -->
+            <div class="col" id="leftFoot">
+                <p>Inspired by The Pallets Projects' Flask</p>
+            </div>
+            <div class="col" id="midFoot">
+                <a href="https://flask.palletsprojects.com/en/1.1.x/quickstart/">
+                    <img id="footer-img" src="images/flask-icon.png" onerror="this.onerror=null;this.src='https://live.staticflickr.com/65535/49243023981_decee05066_o.png'" alt="flask icon">
+                </a>
+            </div>
+            <div class="col" id="rightFoot">
+                <p>Coded with<span class="oi oi-heart btn-sm" aria-hidden="true"></span>by <a class="blueLink" href="https://www.freecodecamp.org/sourav2510" target="_blank">Sourav Agarwal</a></p>
+            </div>
+            <!-- </div> -->
+        </footer>
+</body>
+</html>

@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Portfolio</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- google font library -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Lekton" rel="stylesheet">
+        <!-- bootstrap font library open iconic -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
+        
+        <style>
+            .oi-code {
+                color: #33cccc;
+            }
+
+            body {
+                background-color: #F8F9FA;
+                margin: 0;
+            }
+            #welcome-section::before {
+                display: block;
+                height: 5vh;
+                background-color: #fff;
+                color: black;
+                content: " ";
+            }
+            
+            body::after{
+                content: "";
+                top: 0;
+                height: 90vh;
+                left: 0;
+                right: 0;
+                position: fixed;
+                z-index: -1;
+                background: #6ac7ae url("https://avatars3.githubusercontent.com/u/53350555?s=400&u=fa5f1cade6aca8afa0458f8b155020f0277d8fb3&v=4") no-repeat bottom;
+                background-size: contain;
+/*
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+*/
+                background-attachment:scroll;
+            }
+            
+            img{
+                width: 1000px;
+            }
+            .contain {
+                /*background-color: #F8F9FA;*/
+                display: flex;
+                flex-direction: column;
+            }
+            a {
+                -webkit-tap-highlight-color: rgba(0,0,0,0);
+            }
+            
+            #logo-img {
+                width: 50vw;
+                height: auto;
+                padding: 1% 0 0 5%;
+            }
+            
+            .oi-x {
+                display: none;
+            }
+            .menu-items {
+                max-height: 0;
+                overflow: hidden;
+                width: 100vw;
+                margin-left: -60vw;
+            }
+            
+            
+            #nav li{
+                list-style-type: none;
+                float: left;
+                font-size: 30px;
+                margin-left: 40px;
+
+            }
+            
+            #nav li:hover{
+                font-size: 33px;
+                background-color: gray;
+
+            }
+            
+            #navbar{
+                background: wheat;
+                width: 100vw;
+                height: 60px;
+                overflow: hidden;
+                position: fixed;
+                z-index: 2;
+            }
+            
+            nav {
+                    
+                margin-bottom: .5rem;
+            }
+            
+            .whtBtn {
+                background: rgba(248, 248, 248, 0.9);
+                border: none;
+                border-radius: 3px;
+                width: 90vw;
+                text-align: right;
+                padding-right: 10%;
+            }
+            .oi-nav {
+                color: #00CCCC;
+                font-size: 1.6rem;
+                line-height: 2rem;
+                height: 10vw;
+            }
+            .whtBtn:hover, .whtBtn:hover > .oi-nav {
+                color: #00e6b8;
+                opacity: 0.7;
+                cursor: pointer;
+            }
+
+            #welcome-section {
+                height: 80vh;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                color: #fff;
+            }
+            .top-top {
+                flex-grow: 2;
+            }
+            .icon-top {
+                font-size: 5rem;
+            }
+            .top-mid {
+                flex-grow: 5;
+            }
+            .top-mid h1 {
+                position: relative;
+                top: 300px;
+                font-size: 3rem;
+                font-family: Lato;
+                color: black;
+                margin-bottom: 0;
+            }
+            .top-mid h2 {
+                position: relative;
+                top: 300px;
+                color: black;
+                font-size: 1.75rem;
+                font-family: cursive;
+            }
+            .top-bot {
+                flex-grow: 1;
+            }
+            .icon-bot {
+                font-size: 2rem;
+                color: #fff;
+            }
+            .icon-bot:hover {
+                cursor: pointer;
+                color: #00e6b8;
+            }
+            #projects {
+                background-color: #F8F9FA;
+                min-height: 100vh;
+                padding-top: 10vh;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                color: #666;
+            }
+            #projects .icon-top {
+                font-size: 2rem;
+            }
+            #projects h1 {
+                font-size: 1.5rem;
+                font-family: 'Roboto Condensed', sans-serif;
+            }
+            .thumb {
+                max-width: 90vw;
+            }
+            .thumb:hover {
+                cursor: pointer;
+                opacity: 0.7;
+            }
+
+            .oi-eye {
+                top: 3px;
+            }
+            .sqBtn {
+                font-size: 1.3rem;
+                font-family: 'Roboto Condensed', sans-serif;
+                color: #00e6b8;
+                border: 2px solid black;
+                background: green;
+                border-radius: 3px;
+                padding: 2%;
+                margin-top: 3vh;
+                opacity: 0.7;
+            }
+            .sqBtn:hover {
+                cursor: pointer;
+                color: #00e6b8;
+                border: 3px solid black;
+                opacity: 1.0;
+            }
+            #projects h2 {
+                font-size: 1rem;
+                font-family: 'Lekton', sans-serif;
+                padding: 0 4%;
+            }
+            #projects .icon-bot {
+                color: #666;
+            }
+            #projects .icon-bot:hover {
+                cursor: pointer;
+                color: #00e6b8;
+                opacity: 0.7;
+            }
+            #contact {
+                height: 10vh;
+            }
+            #contact-section {
+                padding-top: 7vh;
+                height: 70vh;
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                color: #fff;
+            }
+            #contact-section .icon-top {
+                font-size: 3rem;
+                color: wheat;
+            }
+            .bottom-top {
+                flex-grow: 1;
+                
+            }
+            .bottom {
+                flex-grow: 2;
+            }
+            .bottom h1 {
+                position: relative;
+                top: 90px;
+                font-size: 3rem;
+                font-family: 'Roboto Condensed', sans-serif;
+                color: black;
+            }
+            .bottom-bot {
+                flex-grow: 3;
+            }
+            #email-link {
+                font-size: 3rem;
+                color: black;
+            }
+            .oi-envelope-open {
+                display: none;
+            }
+            #email-link:hover .oi-envelope-closed {
+                display: none;
+                
+            }
+            #email-link:hover .oi-envelope-open {
+                display: inline-block;
+            }
+            #email-link:hover {
+                cursor: pointer;
+                color: #00e6b8;
+            }
+            footer {
+                background-color: #F8F9FA;
+                height: 13vh;
+            }
+            footer .col {
+                display: block;
+                text-align: center;
+                line-height: .5rem;
+                font-size: 1.3rem;
+            }
+            .left {
+                font-family: sans-serif;
+            }
+            .right {
+                font-family: sans-serif;
+            }
+            footer h6 {
+                color: #595959;
+                display: inline-block;
+                margin: 3vh 0 1vh;
+            }
+            footer .oi-heart {
+                padding-right: 1vw;
+            }
+            .right br {
+                display: none;
+            }
+            
+            @media screen and (min-aspect-ratio: 2/3) and (max-aspect-ratio: 1/1) {
+                .oi-code {color: #99ffcc; sea foam}
+            }
+
+            
+            @media screen and (min-aspect-ratio: 1/1) and (max-aspect-ratio: 33/20) {
+                .oi-code {color:  #fb9084; salmon}
+            }
+
+            
+            @media screen and (min-aspect-ratio: 33/20) {
+                .oi-code {color: #9999ff; purple}
+
+                /*// Medium Desktop -- (1920 x 1080) px */
+                @media screen and (min-width: 1200px) {
+                    .oi-code {color: #ff99bb; pink}
+                }
+                /*// Large Desktop (2560 x 1600) px*/
+                @media screen and (min-width: 2000px) {
+                    #Quickstart h1 {color: #ffd11a; gold}
+
+
+                }
+            }
+        
+            
+
+        </style>
+    </head>
+    <body>
+        <div class="contain">
+            <nav id="navbar">
+                    <ul id="nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#welcome-section">About</a></li>
+                        <li><a href="#projects">Work</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                
+            </nav>
+
+
+            <section id="welcome-section">
+               
+                <div class="top-mid">
+                    <h1>Hey I am Sourav Agarwal</h1>
+                    <h2>A Web Developer</h2>
+                </div>
+                <div class="top-bot">
+                    <a href="#projects">
+                        <span class="oi oi-chevron-bottom icon-bot"></span>
+                    </a>
+                </div>
+            </section>
+            <section id="projects">
+                <span class="oi oi-ellipses icon-top"></span>
+                <h1>My Recent Projects</h1>
+                <div class="container">
+                    <div class="row">
+                        <div class="project-tile col">
+                            <a href="https://codepen.io/sourav2510/pen/abvoVXL">
+                                <img class="thumb" src="https://pbs.twimg.com/media/DJjLJ8_XoAAvgcZ.jpg:large" alt="Project">
+                            </a>
+                        </div>
+                        <div class="project-tile col">
+                            <a href="https://codepen.io/sourav2510/pen/WNQedyR">
+                                <img class="thumb" src="https://i.pinimg.com/originals/ed/e2/02/ede2020af71b33759e555c34b88a0a52.jpg" alt="Project">
+                            </a>
+                        </div>
+                        <div class="project-tile col">
+                            <a href="">
+                                <img class="thumb" src="https://www.inforox.com/wp-content/uploads/2019/11/online-business-1024x661.jpeg" alt="Project">
+                            </a>
+                        </div>
+                    </div>
+                    <a id="profile-link" href="https://github.com/sourav2510" target="_blank">
+                        <button type="button" class="sqBtn"><span class="oi oi-eye"></span> View More</button>
+                    </a>
+                    <h1>I'm a web developer who loves simplifying and enhancing the user experience to create a seamless exchange between the user and the content. </h1>
+                </div>
+                <div class="top-bot">
+                    <a href="#contact">
+                        <span class="oi oi-chevron-bottom icon-bot"></span>
+                    </a>
+                </div>
+                <div id="contact"></div>
+            </section>
+            <section id="contact-section">
+                <div class="bottom-top">
+                    <span class="oi oi-chat display-3 icon-top"></span>
+                </div>
+                <div class="bottom">
+                    <h1>Ready to get in touch?</h1>
+                </div>
+                <div class="bottom-bot">
+                    <a id="email-link" href="mailto:coolsourav2510@gmail.com?subject=I need a developer!" target="_blank">
+                        <span class="oi oi-envelope-closed"></span>
+                        <span class="oi oi-envelope-open"></span>
+                    </a>
+                </div>
+            </section>
+        </div>
+        <footer class="row"><br>
+            <div class="col left"><br><br>
+                <h5>&copy; 2020 Sourav Agarwal All Rights Reserved.</h5>
+            </div>
+            <div class="col right">
+                <h5>Made with <span class="oi oi-heart" aria-hidden="true"></span><br>by Sourav Agarwal</h5>
+            </div>
+        </footer>
+    </body>
+</html>
