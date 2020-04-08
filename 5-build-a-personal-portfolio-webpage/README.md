@@ -1,13 +1,11 @@
 # Build a Personal Portfolio Webpage
-This is my FreeCodeCamp Portfolio Webpage project. I aimed to use HTML and CSS only. I chose a beach theme for this site because it's my favourite scenery. Enjoy!
+This is my FreeCodeCamp Portfolio Webpage project. I aimed to use HTML and CSS only.
 
-View the project here: [GitHub](https://stefaniedev.github.io/freecodecamp-coursework/1-responsive-web-design-certification/8-responsive-web-design-projects/5-build-a-personal-portfolio-webpage/) | [CodePen](https://codepen.io/stefaniedev/full/MVWEBw)
-
---Made with 💗 by Stefanie Feltman
+--Made with 💗 by Sourav Agarwal
 
 ## Social Media
-[FreeCodeCamp](https://www.freecodecamp.org/stefaniedev) |
-[GitHub](https://github.com/stefaniedev) |
-[LinkedIn](https://www.linkedin.com/in/stefaniefeltman/) |
-[Twitter](https://twitter.com/stefaniedev) |
-[CodePen](https://codepen.io/stefaniedev/)
+[FreeCodeCamp](https://www.freecodecamp.org/sourav2510) |
+[GitHub](https://github.com/sourav2510) |
+[LinkedIn](https://www.linkedin.com/in/sourav-agarwal-82ba07121/) |
+[Twitter](https://twitter.com/coolsourav2510) |
+[CodePen](https://codepen.io/sourav2510/)
